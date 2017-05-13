@@ -106,6 +106,15 @@ public class Netty_DuriHandler extends SimpleChannelInboundHandler<ByteBuf> {
                 break;
 
 
+            /*
+          	위도경도  프로토콜
+
+    		*/
+            case "latlon":
+                //content = 위도/경도
+                break;
+
+
         }
 
     }
