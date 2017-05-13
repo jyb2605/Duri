@@ -49,6 +49,7 @@ public class Netty_DuriClient extends Thread {
 
             // Start the connection attempt.
             ch = b.connect(HOST, PORT).sync().channel();
+            Looper.loop();
         }catch (IOException e) {
             e.printStackTrace();
         }
