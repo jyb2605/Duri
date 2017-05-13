@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="뭉이의 기분에 맞는 노래를 틀어주세요."
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:id="@+id/option_btn"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/btn_settings_selector"
+        />
+
+    <Button
+    android:id="@+id/btn_emotion1"
+    android:layout_width="120dp"
+    android:layout_height="50dp"
+    android:layout_below="@+id/option_btn"
+    android:layout_alignParentStart="true"
+    android:layout_marginStart="45dp"
+        android:background="@drawable/btn_1_selector"/>
+
+    <Button
+        android:id="@+id/btn_emotion2"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:background="@drawable/btn_2_selector"
+        android:layout_below="@+id/option_btn"
+        android:layout_toStartOf="@+id/option_btn" />
+    <Button
+        android:id="@+id/btn_emotion3"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/btn_3_selector"
+        android:layout_below="@+id/btn_emotion1"
+        android:layout_alignStart="@+id/btn_emotion1" />
+    <Button
+        android:id="@+id/btn_emotion4"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:background="@drawable/btn_4_selector"
+        android:layout_above="@+id/some"
+        android:layout_alignStart="@+id/btn_emotion2" />
+
+    <Button
+        android:id="@+id/some"
+        android:layout_width="25dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/img_list"
+        android:layout_below="@+id/btn_emotion3"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/music_cnt"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/some"
+        android:orientation="horizontal">
+
+        <ListView
+            android:id="@+id/lst_music"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/music_cnt"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="#81b530"
+        >
+
+        <TextView
+            android:id="@+id/musicname_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="30dp"
+            android:layout_alignParentLeft="true"
+            android:text="노래제목이다"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/onoff_btn"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/btn_pause_selector"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>
