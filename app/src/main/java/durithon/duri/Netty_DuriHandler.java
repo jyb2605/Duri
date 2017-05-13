@@ -112,7 +112,9 @@ public class Netty_DuriHandler extends SimpleChannelInboundHandler<ByteBuf> {
     		*/
             case "latlon":
                 //content = 위도/경도
-                break;
+                Log.d("gps",buffer1);
+
+                 break;
 
 
         }
