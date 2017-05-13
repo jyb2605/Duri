@@ -1,10 +1,7 @@
 package durithon.duri;
 
-import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -34,27 +31,15 @@ public class TutorialActivity extends AppCompatActivity {
 
 //        new MusicListUtil();
 
-        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.M) {
-            int permissionResult = checkSelfPermission(Manifest.permission.CAMERA);
-            if (permissionResult == PackageManager.PERMISSION_DENIED) {
-                if (shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)) {
-                    requestPermissions(new String[]{Manifest.permission.CAMERA}, 1000);
-                }
-                else {
-                    requestPermissions(new String[]{Manifest.permission.CAMERA}, 1000);
-                }
-            }
-        }
-
         ViewPager viewPager=(ViewPager)findViewById(R.id.viewpager);
         viewPager.setAdapter(new adapter(getSupportFragmentManager()));
 
-        TextView button_login_facebook = (TextView) findViewById(R.id.button_login_facebook);
+        TextView button_login_facebook = (TextView) findViewById(R.id.button_start);
         button_login_facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                dialog = ProgressDialog.show(TutorialActivity.this, "", "로그인 중입니다.", true);
+                dialog = ProgressDialog.show(TutorialActivity.this, "", "시작  중입니다.", true);
                 dialog.show();
 
                 EndDialog endDialog = new EndDialog();
@@ -63,19 +48,6 @@ public class TutorialActivity extends AppCompatActivity {
             }
         });
 
-        TextView button_login_google = (TextView) findViewById(R.id.button_login_google);
-        button_login_google.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                dialog = ProgressDialog.show(TutorialActivity.this, "", "로그인 중입니다.", true);
-                dialog.show();
-
-                EndDialog endDialog = new EndDialog();
-                endDialog.start();
-
-            }
-        });
 
         System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ "+ viewPager.getAdapter().getItemPosition(viewPager.getCurrentItem()));
 
@@ -114,7 +86,7 @@ public class TutorialActivity extends AppCompatActivity {
             super.handleMessage(msg);
 
             dialog.dismiss();
-            startActivity(new Intent(getApplicationContext(), SplashActivity.class));
+            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
 //            startActivity(intent);
         }
     };
