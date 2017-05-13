@@ -1,6 +1,7 @@
 package durithon.duri;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -16,6 +17,9 @@ public class Netty_DuriHandler extends SimpleChannelInboundHandler<ByteBuf> {
 
     private Context context;
     public static MapActivity mapActivity = new MapActivity();
+    public static double lat = 0;
+    public static double lon = 0;
+    final static String SENDMESAGGE = "passMessage";
 
     public Netty_DuriHandler(Context context){
         this.context = context;
@@ -116,17 +120,20 @@ public class Netty_DuriHandler extends SimpleChannelInboundHandler<ByteBuf> {
     		*/
             case "latlon":
                 //content = 위도/경도
-                Log.d("gps",buffer1);
-//gps: 37.583753267411325▓127.00747646391298
+                if (MapActivity.isMapActivity) {
+                    Log.d("gps", buffer1);
+                    //gps: 37.583753267411325▓127.00747646391298
+                    /*
+                    String[] strings = buffer1.split(String.valueOf(SplashActivity.ascii));
+                    lat = Double.parseDouble(strings[0]);
+                    lon = Double.parseDouble(strings[1]);
+                    LatLng latLng = new LatLng(Double.parseDouble(strings[0]), Double.parseDouble(strings[1]));
 
-                String[] strings = buffer1.split(String.valueOf(SplashActivity.ascii));
-                LatLng latLng = new LatLng(Double.parseDouble(strings[0]),Double.parseDouble(strings[1]));
+                    */
+                   // mapActivity.display(latLng);
+                    passMessageToActivity(buffer1);
 
-
-
-                mapActivity.display(latLng);
-
-
+                }
 
 
                  break;
@@ -138,5 +145,12 @@ public class Netty_DuriHandler extends SimpleChannelInboundHandler<ByteBuf> {
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
         cause.printStackTrace();
         ctx.close();
+    }
+
+    private void passMessageToActivity(String message){
+        Intent intent = new Intent();
+        intent.setAction(SENDMESAGGE);
+        intent.putExtra("message",message);
+        context.sendBroadcast(intent);
     }
 }
