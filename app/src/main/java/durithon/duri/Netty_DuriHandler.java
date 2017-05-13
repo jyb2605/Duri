@@ -19,7 +19,7 @@ public class Netty_DuriHandler extends SimpleChannelInboundHandler<ByteBuf> {
 
     @Override
     public void channelActive(final ChannelHandlerContext ctx) {
-
+        Log.d("","네티연결 성공");
     }
 
     @Override
@@ -40,6 +40,7 @@ public class Netty_DuriHandler extends SimpleChannelInboundHandler<ByteBuf> {
         String[] buffer = str.split(String.valueOf(SplashActivity.ascii),2);
 
         String buffer1 = buffer[1];
+        Log.e("str",""+buffer1);
         switch (buffer[0]){
 
             /*
@@ -112,6 +113,7 @@ public class Netty_DuriHandler extends SimpleChannelInboundHandler<ByteBuf> {
     		*/
             case "latlon":
                 //content = 위도/경도
+                Log.d("buffer: ","아오 왜 안되냐 " +buffer1);
                 break;
 
 
