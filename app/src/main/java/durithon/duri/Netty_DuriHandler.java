@@ -42,18 +42,70 @@ public class Netty_DuriHandler extends SimpleChannelInboundHandler<ByteBuf> {
         String buffer1 = buffer[1];
         switch (buffer[0]){
 
-            case "100":
+            /*
+              음악재생 프로토콜
+
+             */
+            case "interestStart":
+                //content = 녹음파일 포지션값
 
                 break;
 
-            case "110":
+            case "interestStop":
+                //content = 녹음파일 포지션값
+
                 break;
 
-            case "111":
+            case "sleepyStart":
+                //content = 녹음파일 포지션값
+
                 break;
 
-            case "112":
+            case "sleepyStop":
+                //content = 녹음파일 포지션값
+
                 break;
+
+            case "anxietyStart":
+                //content = 녹음파일 포지션값
+
+                break;
+
+            case "anxietyStop":
+                //content = 녹음파일 포지션값
+
+                break;
+
+            case "sadStart":
+                //content = 녹음파일 포지션값
+
+                break;
+
+            case "sadStop":
+                //content = 녹음파일 포지션값
+
+                break;
+
+
+            /*
+              녹음 프로토콜
+
+             */
+            case "record":
+                //content = 녹음파일 포지션값
+
+                break;
+
+
+            /*
+              만보계 프로토콜
+
+             */
+            case "pedometer":
+                //content = 걸음수
+                break;
+
+
         }
 
     }
