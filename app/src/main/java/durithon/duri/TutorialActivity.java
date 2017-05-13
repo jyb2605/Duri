@@ -86,7 +86,7 @@ public class TutorialActivity extends AppCompatActivity {
             super.handleMessage(msg);
 
             dialog.dismiss();
-            startActivity(new Intent(getApplicationContext(), SplashActivity.class));
+            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
 //            startActivity(intent);
         }
     };
