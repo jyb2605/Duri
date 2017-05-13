@@ -28,7 +28,7 @@
             android:gravity="center"
             android:textSize="15sp"
             android:textColor="#ffffff"
-            android:background="#63B60F"
+            android:background="#99f75b3b"
             android:text="시작하기"
             android:layout_height="60dp" />
     </LinearLayout>
