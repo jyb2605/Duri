@@ -27,7 +27,7 @@ public class Netty_DuriHandler extends SimpleChannelInboundHandler<ByteBuf> {
 
     @Override
     public void channelActive(final ChannelHandlerContext ctx) {
-
+        Log.d("","네티연결 성공");
     }
 
     @Override
@@ -48,6 +48,7 @@ public class Netty_DuriHandler extends SimpleChannelInboundHandler<ByteBuf> {
         String[] buffer = str.split(String.valueOf(SplashActivity.ascii),2);
 
         String buffer1 = buffer[1];
+        Log.e("str",""+buffer1);
         switch (buffer[0]){
 
             /*
@@ -120,6 +121,7 @@ public class Netty_DuriHandler extends SimpleChannelInboundHandler<ByteBuf> {
     		*/
             case "latlon":
                 //content = 위도/경도
+
                 if (MapActivity.isMapActivity) {
                     Log.d("gps", buffer1);
                     //gps: 37.583753267411325▓127.00747646391298
@@ -129,12 +131,15 @@ public class Netty_DuriHandler extends SimpleChannelInboundHandler<ByteBuf> {
                     lon = Double.parseDouble(strings[1]);
                     LatLng latLng = new LatLng(Double.parseDouble(strings[0]), Double.parseDouble(strings[1]));
 
+                Log.d("buffer: ","아오 왜 안되냐 " +buffer1);
+                break;
+
+
                     */
                    // mapActivity.display(latLng);
                     passMessageToActivity(buffer1);
 
                 }
-
 
                  break;
 

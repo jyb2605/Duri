@@ -21,8 +21,10 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        netty_duriClient = new Netty_DuriClient(getApplicationContext());
+        netty_duriClient = new Netty_DuriClient(this);
         netty_duriClient.start();
+
+
         TextView button_sign_up = (TextView) findViewById(R.id.button_sign_up);
         button_sign_up.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +56,7 @@ public class SplashActivity extends AppCompatActivity {
             super.handleMessage(msg);
 
             dialog.dismiss();
-            startActivity(new Intent(getApplicationContext(), TutorialActivity.class));
+            startActivity(new Intent(SplashActivity.this, TutorialActivity.class));
 //            startActivity(intent);
         }
     };

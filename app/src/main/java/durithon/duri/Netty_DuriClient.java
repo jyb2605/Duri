@@ -10,6 +10,8 @@ import io.netty.channel.Channel;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.logging.LogLevel;
+import io.netty.handler.logging.LoggingHandler;
 import io.netty.handler.ssl.SslContext;
 import io.netty.handler.ssl.SslContextBuilder;
 import io.netty.handler.ssl.util.InsecureTrustManagerFactory;
@@ -26,6 +28,7 @@ public class Netty_DuriClient extends Thread {
 
     public Netty_DuriClient(Context context){
         this.context = context;
+
     }
 
     @Override
@@ -41,6 +44,7 @@ public class Netty_DuriClient extends Thread {
             Bootstrap b = new Bootstrap();
             b.group(group)
                     .channel(NioSocketChannel.class)
+                    .handler(new LoggingHandler(LogLevel.TRACE))
                     .handler(new Netty_DuriInitializer(sslCtx, context));
 
             // Start the connection attempt.
