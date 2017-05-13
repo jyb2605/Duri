@@ -9,7 +9,7 @@
         android:id="@+id/imageView"
 
         android:layout_width="match_parent"
-        android:layout_height="41dp"
+        android:layout_height="50dp"
         android:orientation="vertical"
         android:background="#FFFFFF"
         >
@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="음악 들려주기"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="18dp"
             android:layout_gravity="center_horizontal"
             />
     </LinearLayout>
@@ -35,8 +35,8 @@
         android:id="@+id/option_btn"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:background="@drawable/btn_settings_selector"
@@ -44,8 +44,8 @@
 
     <Button
     android:id="@+id/btn_emotion1"
-    android:layout_width="90.5dp"
-    android:layout_height="31dp"
+    android:layout_width="108.9dp"
+    android:layout_height="37.4dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/btn_1_selector"
         android:layout_below="@+id/textView9"
@@ -53,24 +53,24 @@
 
     <Button
         android:id="@+id/btn_emotion2"
-        android:layout_width="90.5dp"
-        android:layout_height="31dp"
+        android:layout_width="108.9dp"
+        android:layout_height="37.4dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/btn_2_selector"
         android:layout_below="@+id/textView9"
         android:layout_toEndOf="@+id/some" />
     <Button
         android:id="@+id/btn_emotion3"
-        android:layout_width="90.5dp"
-        android:layout_height="31dp"
+        android:layout_width="108.9dp"
+        android:layout_height="37.4dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/btn_3_selector"
         android:layout_below="@+id/btn_emotion1"
         android:layout_alignStart="@+id/btn_emotion1" />
     <Button
         android:id="@+id/btn_emotion4"
-        android:layout_width="90.5dp"
-        android:layout_height="31dp"
+        android:layout_width="108.9dp"
+        android:layout_height="37.4dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/btn_4_selector"
         android:layout_above="@+id/some"
@@ -98,7 +98,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="33dp"
+            android:layout_height="50dp"
             android:orientation="vertical"
             android:background="#A9D191">
 
@@ -107,9 +107,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="16dp"
                 android:text="음악 재생목록"
-                android:textColor="#000000b3"
-                android:textSize="8.5sp" />
+                android:textColor="#FFFFFF" />
         </LinearLayout>
 
         <ListView
