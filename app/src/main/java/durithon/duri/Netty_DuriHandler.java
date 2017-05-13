@@ -2,6 +2,9 @@ package durithon.duri;
 
 import android.content.Context;
 import android.util.Log;
+
+import com.google.android.gms.maps.model.LatLng;
+
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -12,6 +15,7 @@ import io.netty.channel.SimpleChannelInboundHandler;
 public class Netty_DuriHandler extends SimpleChannelInboundHandler<ByteBuf> {
 
     private Context context;
+    public static MapActivity mapActivity = new MapActivity();
 
     public Netty_DuriHandler(Context context){
         this.context = context;
@@ -113,12 +117,21 @@ public class Netty_DuriHandler extends SimpleChannelInboundHandler<ByteBuf> {
             case "latlon":
                 //content = 위도/경도
                 Log.d("gps",buffer1);
+//gps: 37.583753267411325▓127.00747646391298
+
+                String[] strings = buffer1.split(String.valueOf(SplashActivity.ascii));
+                LatLng latLng = new LatLng(Double.parseDouble(strings[0]),Double.parseDouble(strings[1]));
+
+
+
+                mapActivity.display(latLng);
+
+
+
 
                  break;
 
-
         }
-
     }
 
     @Override
