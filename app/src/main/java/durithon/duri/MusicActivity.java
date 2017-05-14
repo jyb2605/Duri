@@ -65,13 +65,9 @@ public class MusicActivity extends AppCompatActivity {
         신난다노래.add(new Data("너였다면"));
         신난다노래.add(new Data("월광 1악장"));
         신난다노래.add(new Data("Lazenca, Save Us"));
-
-
         listView = (ListView) findViewById(R.id.lst_music);
         adapter = new MusicAdapter(신난다노래 ,MusicActivity.this);
         listView.setAdapter(adapter);
-
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -79,8 +75,6 @@ public class MusicActivity extends AppCompatActivity {
                 flag = i;
             }
         });
-
-
     }
 
     View.OnClickListener onClickListener = new View.OnClickListener() {

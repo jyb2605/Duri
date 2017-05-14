@@ -2,12 +2,10 @@ package durithon.duri;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -25,29 +23,52 @@ public class SplashActivity extends AppCompatActivity {
         netty_duriClient.start();
 
 
-        TextView button_sign_up = (TextView) findViewById(R.id.button_sign_up);
-        button_sign_up.setOnClickListener(new View.OnClickListener() {
+//        TextView button_sign_up = (TextView) findViewById(R.id.button_sign_up);
+//        button_sign_up.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                dialog = ProgressDialog.show(SplashActivity.this, "", "자동 회원가입 중입니다.", true);
+//                dialog.show();
+//
+//                EndDialog endDialog = new EndDialog();
+//                endDialog.start();
+//            }
+//        });
+//        TextView button_sign_in = (TextView) findViewById(R.id.button_sign_in);
+//        button_sign_in.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                dialog = ProgressDialog.show(SplashActivity.this, "", "로그인 중입니다.", true);
+//                dialog.show();
+//
+//                EndDialog endDialog = new EndDialog();
+//                endDialog.start();
+//            }
+//        });
+//
+        final Handler handler = new Handler();
+        new Thread(new Runnable() {
             @Override
-            public void onClick(View v) {
-                dialog = ProgressDialog.show(SplashActivity.this, "", "자동 회원가입 중입니다.", true);
-                dialog.show();
+            public void run() {
 
-                EndDialog endDialog = new EndDialog();
-                endDialog.start();
+                    try {
+                        Thread.sleep(3000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(new Intent(SplashActivity.this, TutorialActivity.class));
+                    }
+                });
+
             }
-        });
-        TextView button_sign_in = (TextView) findViewById(R.id.button_sign_in);
-        button_sign_in.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        }).start();
 
-                dialog = ProgressDialog.show(SplashActivity.this, "", "로그인 중입니다.", true);
-                dialog.show();
 
-                EndDialog endDialog = new EndDialog();
-                endDialog.start();
-            }
-        });
     }
 
     private Handler DialogHandler = new Handler (){

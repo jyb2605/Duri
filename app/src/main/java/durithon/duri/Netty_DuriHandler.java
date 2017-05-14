@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import com.google.android.gms.maps.model.LatLng;
-
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -16,9 +14,6 @@ import io.netty.channel.SimpleChannelInboundHandler;
 public class Netty_DuriHandler extends SimpleChannelInboundHandler<ByteBuf> {
 
     private Context context;
-    public static MapActivity mapActivity = new MapActivity();
-    public static double lat = 0;
-    public static double lon = 0;
     final static String SENDMESAGGE = "passMessage";
 
     public Netty_DuriHandler(Context context){
