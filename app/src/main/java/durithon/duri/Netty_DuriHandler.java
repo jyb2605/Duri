@@ -2,6 +2,8 @@ package durithon.duri;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 
 import io.netty.buffer.ByteBuf;
@@ -42,7 +44,7 @@ public class Netty_DuriHandler extends SimpleChannelInboundHandler<ByteBuf> {
 
         String[] buffer = str.split(String.valueOf(SplashActivity.ascii),2);
 
-        String buffer1 = buffer[1];
+        final String buffer1 = buffer[1];
         Log.e("str",""+buffer1);
         switch (buffer[0]){
 
@@ -105,15 +107,24 @@ public class Netty_DuriHandler extends SimpleChannelInboundHandler<ByteBuf> {
               만보계 프로토콜
 
              */
-            case "pedometer":
+            case "a":
                 //content = 걸음수
+
+                new Handler(Looper.getMainLooper()).post(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(MapActivity.isMapActivity == true){
+                            MapActivity.heartbit.setText(buffer1);
+                        }
+                    }
+                });
                 break;
 
 
             /*
-          	위도경도  프로토콜
+             위도경도  프로토콜
 
-    		*/
+          */
             case "latlon":
                 //content = 위도/경도
 
@@ -131,12 +142,12 @@ public class Netty_DuriHandler extends SimpleChannelInboundHandler<ByteBuf> {
 
 
                     */
-                   // mapActivity.display(latLng);
+                    // mapActivity.display(latLng);
                     passMessageToActivity(buffer1);
 
                 }
 
-                 break;
+                break;
 
         }
     }

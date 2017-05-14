@@ -28,8 +28,8 @@
             android:gravity="center"
             android:textSize="15sp"
             android:textColor="#ffffff"
-            android:background="#63B60F"
-            android:text="시작하기"
+            android:background="#42599B"
+            android:text="페이스북으로 로그인하기"
             android:layout_height="60dp" />
     </LinearLayout>
 
