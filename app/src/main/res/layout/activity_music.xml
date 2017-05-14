@@ -4,59 +4,79 @@
     android:layout_height="match_parent"
     android:background="#E6E6E6">
 
+
+    <LinearLayout
+        android:id="@+id/imageView"
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="음악 들려주기"
+            android:layout_marginTop="12dp"
+            android:layout_gravity="center_horizontal"
+            />
+    </LinearLayout>
+
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:text="뭉이의 기분에 맞는 노래를 틀어주세요."
-        android:layout_alignParentTop="true"
+        android:layout_below="@id/imageView"
         android:layout_centerHorizontal="true" />
 
     <ImageButton
         android:id="@+id/option_btn"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:background="@drawable/btn_settings_selector"
         />
 
     <Button
-    android:id="@+id/btn_emotion1"
-    android:layout_width="90.5dp"
-    android:layout_height="31dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/btn_1_selector"
+        android:id="@+id/btn_emotion1"
+        android:layout_width="108dp"
+        android:layout_height="37dp"
         android:layout_below="@+id/textView9"
-        android:layout_toStartOf="@+id/some" />
+        android:layout_marginTop="10dp"
+        android:layout_toStartOf="@+id/some"
+        android:background="@drawable/btn_1_selector" />
 
     <Button
         android:id="@+id/btn_emotion2"
-        android:layout_width="90.5dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/btn_2_selector"
+        android:layout_width="108dp"
+        android:layout_height="37dp"
         android:layout_below="@+id/textView9"
-        android:layout_toEndOf="@+id/some" />
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/some"
+        android:background="@drawable/btn_2_selector" />
+
     <Button
         android:id="@+id/btn_emotion3"
-        android:layout_width="90.5dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/btn_3_selector"
+        android:layout_width="108dp"
+        android:layout_height="37dp"
+        android:layout_alignStart="@+id/btn_emotion1"
         android:layout_below="@+id/btn_emotion1"
-        android:layout_alignStart="@+id/btn_emotion1" />
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_3_selector" />
+
     <Button
         android:id="@+id/btn_emotion4"
-        android:layout_width="90.5dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/btn_4_selector"
+        android:layout_width="108dp"
+        android:layout_height="37dp"
         android:layout_above="@+id/some"
-        android:layout_alignStart="@+id/btn_emotion2" />
+        android:layout_alignStart="@+id/btn_emotion2"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_4_selector" />
 
     <Button
         android:id="@+id/some"
@@ -78,14 +98,21 @@
         android:background="#FFFFFF">
 
 
-        <TextView
-            android:id="@+id/list_label"
-            android:layout_width="fill_parent"
-            android:layout_height="30dp"
-            android:gravity="center_horizontal"
-            android:textSize="8.5sp"
-            android:textColor="#000000b3"
-            android:text="음악 재생목록" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical"
+            android:background="#A9D191">
+
+            <TextView
+                android:id="@+id/list_label"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:text="음악 재생목록"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
 
         <ListView
             android:id="@+id/lst_music"
