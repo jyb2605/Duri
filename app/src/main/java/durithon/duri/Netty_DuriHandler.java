@@ -16,9 +16,6 @@ import io.netty.channel.SimpleChannelInboundHandler;
 public class Netty_DuriHandler extends SimpleChannelInboundHandler<ByteBuf> {
 
     private Context context;
-    public static MapActivity mapActivity = new MapActivity();
-    public static double lat = 0;
-    public static double lon = 0;
     final static String SENDMESAGGE = "passMessage";
 
     public Netty_DuriHandler(Context context){
