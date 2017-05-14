@@ -7,11 +7,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.bumptech.glide.Glide;
+
 public class Viewpager_Page3 extends android.support.v4.app.Fragment {
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -19,7 +17,9 @@ public class Viewpager_Page3 extends android.support.v4.app.Fragment {
         LinearLayout linearLayout = (LinearLayout)inflater.inflate(R.layout.viewpager_child,container,false);
 
         ImageView tutorial = (ImageView) linearLayout.findViewById(R.id.img_tutorial);
-        tutorial.setImageResource(R.drawable.music);
+//        tutorial.setImageResource(R.drawable.music);
+        Glide.with(this).load(R.drawable.music).into(tutorial);
+
 
         return linearLayout;
     }
