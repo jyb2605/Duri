@@ -19,7 +19,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        netty_duriClient = new Netty_DuriClient(this);
+        netty_duriClient = new Netty_DuriClient(getApplicationContext());
         netty_duriClient.start();
 
 
